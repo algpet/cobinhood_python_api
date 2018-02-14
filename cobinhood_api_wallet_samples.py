@@ -1,0 +1,31 @@
+import cobinhood_api.cobinhood as cobinhood
+
+API_KEY = "your key"
+api = cobinhood.CobinhoodClient(api_key=API_KEY)
+
+print("Following calls will help you understand basics of cobinhood_api REST API part related to wallets, ledger and accounting")
+print()
+print("Browse your balance changes with getLedger method.")
+print("  api.getLedger() : {result}: ".format(result=api.getLedger()))
+print("this method can be invoked with  optional parameter - currency")
+print("  api.getLedger('ETH') : {result}: ".format(result=api.getLedger('ETH')))
+print()
+print("getDepositHistory and getWithdrawalHistory let you browse your history of deposits and withdrawals")
+print("  api.getDepositHistory() : {result}: ".format(result=api.getDepositHistory()))
+print("  api.getWithdrawalHistory() : {result}: ".format(result=api.getWithdrawalHistory()))
+print("either of methods accept optional parameter - currency")
+print("  api.getDepositHistory('ETH') : {result}: ".format(result=api.getDepositHistory('ETH')))
+print("  api.getWithdrawalHistory('BTC') : {result}: ".format(result=api.getWithdrawalHistory('BTC')))
+print("methods getDeposit and getWithdrawal let you query single deposit or withdrawal by its ID")
+print("  api.getDeposit('some_deposit_id') : {result}: ".format(result=api.getDeposit('some_deposit_id')))
+print("  api.getWithdrawal('some_withdrawal_id') : {result}: ".format(result=api.getWithdrawal('some_withdrawal_id')))
+print()
+print("getDepositAddresses and getWithdrawalAddresses let you browse deposit and withdrawal addresses")
+print("  api.getDepositAddresses() : {result}: ".format(result=api.getDepositAddresses()))
+print("  api.getWithdrawalAddresses() : {result}: ".format(result=api.getWithdrawalAddresses()))
+print("either of methods accept optional parameter - currency")
+print("  api.getDepositAddresses('ETH') : {result}: ".format(result=api.getDepositAddresses('ETH')))
+print("  api.getWithdrawalAddresses('ETH') : {result}: ".format(result=api.getWithdrawalAddresses('ETH')))
+print()
+print("thats it for a wallet management with private API")
+
